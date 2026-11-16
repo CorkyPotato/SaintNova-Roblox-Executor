@@ -97,6 +97,5 @@ See [`NOTICE.md`](NOTICE.md) for provenance and source attribution.
 
 ## License
 
-No project license has been added yet. Choose one before redistributing binaries
-or accepting contributions. Third-party components keep their own licenses; see
-`THIRD_PARTY_NOTICES.md`.
+MIT licensed; see [`LICENSE`](LICENSE). Third-party components keep their own
+licenses; see `THIRD_PARTY_NOTICES.md`.
