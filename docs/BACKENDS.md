@@ -96,7 +96,7 @@ to implement `IExecutionBackend` and register itself. The Studio backend is the
 reference for the shape of a live-client transport.
 
 The public status and build plan live in
-[SaintNova-Player-Backend](https://github.com/CorkyPotato/SaintNova-Player-Backend).
+[Roblox-Player-Backend](https://github.com/CorkyPotato/Roblox-Player-Backend).
 
 If you build one, keep the availability rule: `available = false` with a
 specific `detail` is better than a backend that pretends and fails later.
