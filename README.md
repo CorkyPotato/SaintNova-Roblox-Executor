@@ -1,5 +1,8 @@
 # SaintNova Executor
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/CorkyPotato/SaintNova-Executor)](https://github.com/CorkyPotato/SaintNova-Executor/releases)
+
 A Luau execution framework for **Roblox Studio** with a replaceable backend, a
 local harness, a named-pipe protocol, and a tkinter UI.
 
@@ -7,6 +10,12 @@ SaintNova runs Lua in a Roblox Studio play session through its own backend. It
 compiles scripts with the engine by rewriting a prepared ModuleScript's
 `Source`, executes them in the live client, and streams output, errors, and
 yields back to the CLI or UI. It does not target the Roblox Player.
+
+## Download
+
+Prebuilt Windows x64 release: [v0.1.0](https://github.com/CorkyPotato/SaintNova-Executor/releases/tag/v0.1.0).
+The zip includes the executable, Studio place, UI, docs, and quickstart. Build
+from source below if you prefer.
 
 ## Status
 
@@ -16,7 +25,7 @@ yields back to the CLI or UI. It does not target the Roblox Player.
 | Local harness backend (instances, signals, filesystem, clipboard, crypt, debug) | Working |
 | Named-pipe protocol with log streaming, cancel, timeout, reset | Working |
 | tkinter UI (run, cancel, reset, backends, log pane) | Working |
-| CLI (`serve`, `run`, `compile`, `repl`, `backends`) | Working |
+| CLI (`serve`, `run`, `compile`, `repl`, `backends`, `version`) | Working |
 | Embeddable DLL with a C surface | Working |
 | Roblox Studio backend | Working in a play session: engine-compiled ModuleScript transport, output streaming, errors, yields |
 | Roblox Player backend | Not supported |
@@ -40,7 +49,7 @@ powershell -ExecutionPolicy Bypass -File scripts\build.ps1
 Outputs:
 
 - `build\bin\saintnova.exe`
-- `build\bin\saintnova.dll`
+- `build\bin\libsaintnova.dll` (MinGW; `saintnova.dll` with MSVC)
 
 With Visual Studio, configure CMake manually and use the generated configuration
 path:
