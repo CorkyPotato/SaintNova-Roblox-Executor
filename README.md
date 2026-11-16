@@ -42,7 +42,9 @@ backend seam is: a Player backend implements `IExecutionBackend` and registers
 itself, while the protocol, UI, CLI, and job lifecycle stay unchanged.
 
 See [`docs/BACKENDS.md`](docs/BACKENDS.md) for the contract, the registration
-point, the reference live-client implementation, and the current status.
+point, the reference live-client implementation, and the current status. The
+public status and build plan live in
+[`SaintNova-Player-Backend`](https://github.com/CorkyPotato/SaintNova-Player-Backend).
 
 ## Build
 
