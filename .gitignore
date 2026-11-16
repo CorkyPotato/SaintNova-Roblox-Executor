@@ -1,0 +1,11 @@
+build/
+out/
+__pycache__/
+*.pyc
+*.log
+*.dmp
+*.pfx
+*.cer
+.vs/
+.vscode/
+*.user
