@@ -114,6 +114,10 @@ and template installed. The loader source is also in
 - [`docs/FUNCTION-SURFACE.md`](docs/FUNCTION-SURFACE.md) — implemented and refusing functions.
 - [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) — third-party licences.
 
+## Contributors
+
+See [`CONTRIBUTORS.md`](CONTRIBUTORS.md).
+
 ## Provenance
 
 See [`NOTICE.md`](NOTICE.md) for provenance and source attribution.
