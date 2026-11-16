@@ -3,6 +3,15 @@
 All notable changes to SaintNova Executor are recorded here. Releases use
 [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+
+- Renamed the repository to `SaintNova-Roblox-Executor`; the product name stays
+  SaintNova Executor.
+- Added `docs/BACKENDS.md`: the `IExecutionBackend` contract, the registration
+  point, the Studio reference transport, and the status of a Player backend.
+
 ## [0.1.0] - 2026-11-16
 
 First public release. Windows x64, Roblox Studio only.
@@ -28,4 +37,4 @@ First public release. Windows x64, Roblox Studio only.
 - Functions that are not implemented raise with a reason instead of silently
   doing nothing.
 
-[0.1.0]: https://github.com/CorkyPotato/SaintNova-Executor/releases/tag/v0.1.0
+[0.1.0]: https://github.com/CorkyPotato/SaintNova-Roblox-Executor/releases/tag/v0.1.0

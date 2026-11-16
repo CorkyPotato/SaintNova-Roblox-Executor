@@ -200,8 +200,10 @@ It is the same `SaintNovaServer` the CLI uses, so the two cannot drift.
 
 ## Known limits
 
-- The Roblox backend has no transport. Nothing here bypasses client integrity
-  checks, and it will not pretend to.
+- The Roblox backend targets Roblox Studio (`RobloxStudioBeta.exe`) only. It
+  does not attach to the Player and contains no client-integrity bypass. A
+  Player backend is an extension point, not a shipped feature; see
+  `docs/BACKENDS.md`.
 - One VM per harness backend: scripts share globals until `reset`.
 - `hookfunction` cannot work: Luau closures are immutable from Luau. The
   function exists and raises.

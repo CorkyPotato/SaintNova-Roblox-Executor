@@ -6,16 +6,17 @@
 
 namespace saintnova {
 
-// Live-client backend seam.
+// Roblox Studio backend.
 //
-// This class owns no game state, no offsets and no injection primitive. It
-// exists so the rest of the executor can be written and tested against a stable
-// interface while the transport below it is unresolved.
+// Attaches to RobloxStudioBeta.exe, locates the SaintNova loader globals and the
+// SaintNovaTemplate Source buffer, writes the wrapped script, and reads the
+// loader's state, log, and result back. It does not attach to the Roblox Player
+// and contains no client-integrity bypass.
 //
-// To make it real, implement ITransport (see docs/BACKENDS.md) and wire it in
-// here: the contract is "run this text in that client and stream stdout back".
-// Everything above this file - protocol, UI, script management, logging - stays
-// unchanged.
+// A Player transport is a separate IExecutionBackend implementation: the
+// contract is "run this text in that client and stream stdout back". Everything
+// above this file - protocol, UI, script management, logging - stays unchanged.
+// See docs/BACKENDS.md.
 class RobloxBackend final : public IExecutionBackend {
 public:
     RobloxBackend();

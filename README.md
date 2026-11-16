@@ -1,19 +1,20 @@
 # SaintNova Executor
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Release](https://img.shields.io/github/v/release/CorkyPotato/SaintNova-Executor)](https://github.com/CorkyPotato/SaintNova-Executor/releases)
+[![Release](https://img.shields.io/github/v/release/CorkyPotato/SaintNova-Roblox-Executor)](https://github.com/CorkyPotato/SaintNova-Roblox-Executor/releases)
 
-A Luau execution framework for **Roblox Studio** with a replaceable backend, a
-local harness, a named-pipe protocol, and a tkinter UI.
+A **Roblox Studio** executor with a replaceable backend, a local harness, a
+named-pipe protocol, and a tkinter UI.
 
 SaintNova runs Lua in a Roblox Studio play session through its own backend. It
 compiles scripts with the engine by rewriting a prepared ModuleScript's
 `Source`, executes them in the live client, and streams output, errors, and
-yields back to the CLI or UI. It does not target the Roblox Player.
+yields back to the CLI or UI. The core is backend-agnostic; a Player backend is
+not included.
 
 ## Download
 
-Prebuilt Windows x64 release: [v0.1.0](https://github.com/CorkyPotato/SaintNova-Executor/releases/tag/v0.1.0).
+Prebuilt Windows x64 release: [v0.1.0](https://github.com/CorkyPotato/SaintNova-Roblox-Executor/releases/tag/v0.1.0).
 The zip includes the executable, Studio place, UI, docs, and quickstart. Build
 from source below if you prefer.
 
@@ -28,10 +29,20 @@ from source below if you prefer.
 | CLI (`serve`, `run`, `compile`, `repl`, `backends`, `version`) | Working |
 | Embeddable DLL with a C surface | Working |
 | Roblox Studio backend | Working in a play session: engine-compiled ModuleScript transport, output streaming, errors, yields |
-| Roblox Player backend | Not supported |
+| Roblox Player backend | Not shipped; see [`docs/BACKENDS.md`](docs/BACKENDS.md) |
 
 Unsupported functions are not silent no-ops. Each one raises with a reason; see
 [`docs/FUNCTION-SURFACE.md`](docs/FUNCTION-SURFACE.md).
+
+## Player backend
+
+The public release is Studio-only. The Player transport explored in the original
+workspace did not reach a stable release and is not part of this repository. The
+backend seam is: a Player backend implements `IExecutionBackend` and registers
+itself, while the protocol, UI, CLI, and job lifecycle stay unchanged.
+
+See [`docs/BACKENDS.md`](docs/BACKENDS.md) for the contract, the registration
+point, the reference live-client implementation, and the current status.
 
 ## Build
 
@@ -96,6 +107,7 @@ and template installed. The loader source is also in
 ## Documentation
 
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — process structure, backends, threading.
+- [`docs/BACKENDS.md`](docs/BACKENDS.md) — backend contract, registration, Player status.
 - [`docs/PROTOCOL.md`](docs/PROTOCOL.md) — named-pipe framing and messages.
 - [`docs/FUNCTION-SURFACE.md`](docs/FUNCTION-SURFACE.md) — implemented and refusing functions.
 - [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) — third-party licences.
@@ -108,3 +120,6 @@ See [`NOTICE.md`](NOTICE.md) for provenance and source attribution.
 
 MIT licensed; see [`LICENSE`](LICENSE). Third-party components keep their own
 licenses; see `THIRD_PARTY_NOTICES.md`.
+
+Not affiliated with Roblox Corporation. Roblox is a trademark of Roblox
+Corporation.
